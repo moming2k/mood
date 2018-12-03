@@ -74,3 +74,18 @@ You'll have to setup a few things
 * `gem install foreman`
 * foreman start
 * don't forget to set env variables for `TELEGRAM_TOKEN` and `TELEGRAM_CHAT_ID`
+
+### Heroku Notes
+
+#### Install
+* `brew install heroku/brew/heroku`
+* Follow homebrews install instructions https://docs.brew.sh/Shell-Completion
+* `heroku autocomplete --refresh-cache`
+* 
+
+#### Deploy
+* `heroku git:remote -a rmmoodbot`
+* `heroku config:set TELEGRAM_TOKEN=XXXX TELEGRAM_CHAT_ID=XXXX`
+* view env vars `heroku config`
+* can also set env vars through web
+* Make sure to add heroku scheduler add on
