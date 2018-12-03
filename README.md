@@ -64,3 +64,13 @@ You'll have to setup a few things
 - Provide those values using `TELEGRAM_TOKEN` and `TELEGRAM_CHAT_ID`
 - And host it on any server, like Heroku, and use the Heroku scheduler feature to call `rake morning`, `rake noon` and `rake evening`
 - Make sure to enable the Heroku worker is enabled
+
+### Starting local server on MacOS
+
+* Install imagemagick@6 `brew install imagemagick@6`
+* Link imagemagick files `brew link imagemagick@6 --force`
+* `bundle install`
+* May need postgres `brew install postgres`
+* `gem install foreman`
+* foreman start
+* don't forget to set env variables for `TELEGRAM_TOKEN` and `TELEGRAM_CHAT_ID`
