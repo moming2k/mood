@@ -65,3 +65,28 @@ You'll have to setup a few things
   - To get the `TELEGRAM_CHAT_ID`, send a message to your bot and then access the following URL in your browser `https://api.telegram.org/bot[TELEGRAM_TOKEN]/getUpdates`. You'll see a message, and within that, the Chat ID to use
 - And host it on any server, like Heroku, and use the Heroku scheduler feature to call `rake morning`, `rake noon` and `rake evening`
 - Make sure to enable the Heroku worker is enabled
+
+### Starting local server on MacOS
+
+* Install imagemagick@6 `brew install imagemagick@6`
+* Link imagemagick files `brew link imagemagick@6 --force`
+* `bundle install`
+* May need postgres `brew install postgres`
+* `gem install foreman`
+* foreman start
+* don't forget to set env variables for `TELEGRAM_TOKEN` and `TELEGRAM_CHAT_ID`
+
+### Heroku Notes
+
+#### Install
+* `brew install heroku/brew/heroku`
+* Follow homebrews install instructions https://docs.brew.sh/Shell-Completion
+* `heroku autocomplete --refresh-cache`
+* 
+
+#### Deploy
+* `heroku git:remote -a rmmoodbot`
+* `heroku config:set TELEGRAM_TOKEN=XXXX TELEGRAM_CHAT_ID=XXXX`
+* view env vars `heroku config`
+* can also set env vars through web
+* Make sure to add heroku scheduler add on
